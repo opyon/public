@@ -14,7 +14,7 @@ def collatz(n, count):
     return collatz(n, count)
 
 def main(target):
-    for i in range(1,target+1):
+    for i in range(1,target):
         collatzs[i] = collatz(i,0)
 
 collatzs = {}
