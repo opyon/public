@@ -4,6 +4,7 @@ def is_leap_year(y):
     else:
         return False
 
+
 def month_days(y, m):
     if m == 2:
         total_days = 28 + is_leap_year(y)
@@ -14,17 +15,18 @@ def month_days(y, m):
     return total_days
 
 
-def counting_sundays(s_y, e_y):
+def counting_sundays(start_year, end_year):
     sundays = 0
-    total_day = 0
-    if e_y > 1900:
-        total_day = 365
-    for y in range(s_y, e_y + 1):
+    total_days = 0
+    if end_year > 1900:
+        total_days = 365
+    for y in range(start_year, end_year + 1):
         for m in range(1, 13):
-            if (total_day + 1) % 7 == 0:
+            if (total_days + 1) % 7 == 0:
                 sundays += 1
-            total_day += month_days(y, m)
+            total_days += month_days(y, m)
     return sundays
+
 
 print(counting_sundays(1901, 2000))
 # 171
